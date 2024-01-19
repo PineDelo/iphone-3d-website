@@ -1,0 +1,40 @@
+.nav_wrapper {
+  margin: 0;
+  width: 100%;
+  min-width: 320px;
+  height: 48px;
+  max-height: 44px;
+  font-size: 17px;
+  background-color: #f2f2f2;
+
+  .nav_content {
+    margin: 0 auto;
+    padding: 0 22px;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 1024px;
+
+    .list_styled {
+      display: flex;
+      justify-content: space-between;
+      margin: 0 -9px;
+      width: auto;
+      height: 44px;
+      cursor: default;
+      list-style: none;
+
+      .link_styled {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 44px;
+        line-height: 1;
+        font-size: 12px;
+        font-weight: 400;
+        letter-spacing: -0.01em;
+        color: #000000cc;
+        text-decoration: none;
+      }
+    }
+  }
+}
