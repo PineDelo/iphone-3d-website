@@ -21,6 +21,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/components/WebgiViewer.jsx", "src/components/SoundSection.jsx", "src/components/Nav.jsx", "src/components/Jumbotron.jsx", "src/components/DisplaySection.jsx", "src/lib/scroll-animation.js", "src/app/page.jsx", "src/app/layout.tsx"],
   "exclude": ["node_modules"]
 }

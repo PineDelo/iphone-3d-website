@@ -11,59 +11,59 @@
   height: 100vh;
   box-sizing: border-box;
   //   opacity: 0;
-}
 
-.title {
-  margin-bottom: 0;
-  font-size: 17px;
-  font-weight: 400;
-  letter-spacing: -0.022em;
-  color: #86868b;
-}
+  .title {
+    margin-bottom: 0;
+    font-size: 17px;
+    font-weight: 400;
+    letter-spacing: -0.022em;
+    color: #86868b;
+  }
 
-.text {
-  display: inline-block;
-  margin-top: 16px;
-  padding-top: 0.5px;
-  margin-bottom: 18px;
-  background-image: linear-gradient(180deg, #ffb6ff, #b344ff);
-  -webkit-background-clip: text;
-  background-clip: text;
-  font-size: 48px;
-  font-weight: 600;
-  color: transparent;
-}
+  .text {
+    display: inline-block;
+    margin-top: 16px;
+    padding-top: 0.5px;
+    margin-bottom: 18px;
+    background-image: linear-gradient(180deg, #ffb6ff, #b344ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    font-size: 48px;
+    font-weight: 600;
+    color: transparent;
+  }
 
-.description {
-  font-size: 21px;
-  font-weight: 400;
-}
+  .description {
+    font-size: 21px;
+    font-weight: 400;
+  }
 
-.button {
-  cursor: pointer;
-  display: inline-block;
-  margin: 15px;
-  padding: 8px 16px;
-  min-width: 28px;
-  text-align: center;
-  white-space: nowrap;
-  font-size: 17px;
-  font-weight: 400;
-  border-radius: 980px;
-  color: #fff;
-  background: #0071e3;
-}
+  .button {
+    cursor: pointer;
+    display: inline-block;
+    margin: 15px;
+    padding: 8px 16px;
+    min-width: 28px;
+    text-align: center;
+    white-space: nowrap;
+    font-size: 17px;
+    font-weight: 400;
+    border-radius: 980px;
+    color: #fff;
+    background: #0071e3;
+  }
 
-.back_button {
-  position: fixed;
-  padding: 10px 30px;
-  bottom: 10px;
-  right: 10px;
-  border: none;
-  border-radius: 50px;
-  font-size: 0.6rem;
-  transition: all 0.8s ease;
-  color: black;
-  background: white;
-  cursor: pointer;
+  .back_button {
+    position: fixed;
+    padding: 10px 30px;
+    bottom: 10px;
+    right: 10px;
+    border: none;
+    border-radius: 50px;
+    font-size: 0.6rem;
+    transition: all 0.8s ease;
+    color: black;
+    background: white;
+    cursor: pointer;
+  }
 }

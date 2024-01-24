@@ -16,7 +16,7 @@ class Jumbotron extends Component {
     });
   }
 
-  render(): ReactNode {
+  render() {
     return (
       <div className={Styles.wrapper}>
         <h2 className={Styles.title}>New</h2>
@@ -24,8 +24,8 @@ class Jumbotron extends Component {
           className={Styles.logo}
           src={Iphone}
           alt="iPhone 14 Pro"
-          width={140}
-          height={0}
+          // width={0}
+          // height={0}
         />
         <p className={Styles.text}>Big and bigger.</p>
         <span className="description">
@@ -33,7 +33,7 @@ class Jumbotron extends Component {
         </span>
         <ul className={Styles.links}>
           <li>
-            <button className={Styles.button}>Buy</button>
+            <div className={Styles.button}>Buy</div>
           </li>
           <li>
             <Link
@@ -49,8 +49,8 @@ class Jumbotron extends Component {
           className={Styles.iphone_img}
           src={HoldingIphone}
           alt="iPhone-img"
-          width={0}
-          height={0}
+          // width={0}
+          // height={0}
         />
       </div>
     );

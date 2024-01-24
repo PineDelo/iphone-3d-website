@@ -9,7 +9,7 @@ import Store from "../../public/assets/images/store.svg";
 import Styles from "./nav.module.scss";
 
 class Nav extends Component {
-  render(): React.ReactNode {
+  render() {
     return (
       <nav className={Styles.nav_wrapper}>
         <div className={Styles.nav_content}>
