@@ -3,6 +3,7 @@ import {
   ReactNode,
   RefObject,
   createRef,
+  forwardRef,
   useCallback,
   useEffect,
   useRef,
@@ -101,6 +102,27 @@ class WebgiViewer extends Component {
     this.position;
     this.target;
     this.needsUpdate;
+    
+    this.state = {
+      viewerRef: null,
+      targerRef: null,
+      cameraRef: null,
+      positionRef: null,
+    };
+    this.useImperativeHandle(ref, () => ({
+      triggerPreview() {
+        gsap.to(this.state.positionRef, {
+          x: 13.04,
+          y: -2.01,
+          z: 2.29,
+          duration: 2,
+          onUpdate:() => {
+            this.state.viewerRef.setDirty();
+            this.state.cameraRef.positionTargetUpdated(true)
+          }
+        });
+      },
+    }));
   }
 
   componentDidMount() {
@@ -165,4 +187,10 @@ class WebgiViewer extends Component {
   }
 }
 
-export default WebgiViewer;
+const ForwardedWebgiViewer = forwardRef((props, ref) => {
+  return <WebgiViewer {...props} ref={ref} />;
+});
+
+ForwardedWebgiViewer.displayName = "ForwardedWebgiViewer";
+
+export default ForwardedWebgiViewer;
