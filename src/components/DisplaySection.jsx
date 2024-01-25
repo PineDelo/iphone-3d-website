@@ -1,17 +1,17 @@
-import { Component, ReactNode } from "react";
-import Styles from "./displaySection.module.scss";
+import { Component } from "react";
+
 
 class DisplaySection extends Component {
   render() {
     return (
-      <div className={Styles.wrapper}>
-        <h2 className={Styles.title}>New</h2>
-        <p className={Styles.text}>Brilliant.</p>
-        <span className={Styles.description}>
+      <div className="display-section wrapper">
+        <h2 className="title">New</h2>
+        <p className="text">Brilliant.</p>
+        <span className="description">
           A display that&apos;s up to 2x brighter in the sun.
         </span>
-        <div className={Styles.button}>Try me!</div>
-        <button className={Styles.back_button}>Top</button>
+        <div className="button">Try me!</div>
+        <button className="back-button">Top</button>
       </div>
     );
   }

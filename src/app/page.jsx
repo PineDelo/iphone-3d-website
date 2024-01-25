@@ -1,5 +1,5 @@
 "use client";
-import { Component, ReactNode } from "react";
+import { Component } from "react";
 import "./page.module.css";
 import Jumbotron from "@/components/Jumbotron";
 import SoundSection from "@/components/SoundSection";

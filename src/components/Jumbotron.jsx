@@ -1,5 +1,4 @@
-import { Component, ReactNode } from "react";
-import Styles from "./jumbotron.module.scss";
+import { Component } from "react";
 import Image from "next/image";
 import Link from "next/link";
 // Images
@@ -7,8 +6,12 @@ import Iphone from "../../public/assets/images/iphone-14.jpg";
 import HoldingIphone from "../../public/assets/images/iphone-hand.png";
 
 class Jumbotron extends Component {
+  constructor(props) {
+    super(props);
+    this.handleLearnMore = this.handleLearnMore.bind(this);
+  }
   handleLearnMore() {
-    const element = document.querySelector(".sound_section");
+    const element = document.querySelector(".sound-section");
     window.scrollTo({
       top: element?.getBoundingClientRect().top,
       left: 0,
@@ -18,35 +21,31 @@ class Jumbotron extends Component {
 
   render() {
     return (
-      <div className={Styles.wrapper}>
-        <h2 className={Styles.title}>New</h2>
+      <div className="jumbotron-section wrapper">
+        <h2 className="title">New</h2>
         <Image
-          className={Styles.logo}
+          className="logo"
           src={Iphone}
           alt="iPhone 14 Pro"
           // width={0}
           // height={0}
         />
-        <p className={Styles.text}>Big and bigger.</p>
+        <p className="text">Big and bigger.</p>
         <span className="description">
           From $41.62/mo. for 24 mo. or $999 before trade-in
         </span>
-        <ul className={Styles.links}>
+        <ul className="links">
           <li>
-            <div className={Styles.button}>Buy</div>
+            <div className="button">Buy</div>
           </li>
           <li>
-            <Link
-              className={Styles.link}
-              href="/"
-              onClick={this.handleLearnMore}
-            >
+            <a className="link" onClick={this.handleLearnMore}>
               Learn more
-            </Link>
+            </a>
           </li>
         </ul>
         <Image
-          className={Styles.iphone_img}
+          className="iphone-img"
           src={HoldingIphone}
           alt="iPhone-img"
           // width={0}

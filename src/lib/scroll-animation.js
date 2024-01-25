@@ -8,25 +8,46 @@ function scrollAnimation(position, target, onUpdate) {
     y: -10.74,
     z: -5.93,
     scrollTrigger: {
-      trigger: ".sound_section",
+      trigger: ".sound-section",
       start: "top bottom",
       end: "top top",
       scrub: 2,
       immediateRender: false,
     },
     onUpdate,
-  }).to(target, {
-    x: 1.52,
-    y: 0.77,
-    z: -1.08,
-    scrollTrigger: {
-      trigger: ".sound_section",
-      start: "top bottom",
-      end: "top top",
-      scrub: 2,
-      immediateRender: false,
-    },
-  });
+  })
+    .to(target, {
+      x: 1.52,
+      y: 0.77,
+      z: -1.08,
+      scrollTrigger: {
+        trigger: ".sound-section",
+        start: "top bottom",
+        end: "top top",
+        scrub: 2,
+        immediateRender: false,
+      },
+    })
+    .to(".jumbotron-section", {
+      opacity: 0,
+      scrollTrigger: {
+        trigger: ".sound-section",
+        start: "top bottom",
+        end: "top top",
+        scrub: 2,
+        immediateRender: false,
+      },
+    })
+    .to(".sound-section-content", {
+      opacity: 1,
+      scrollTrigger: {
+        trigger: ".sound-section",
+        start: "top bottom",
+        end: "top top",
+        scrub: 2,
+        immediateRender: false,
+      },
+    });
 }
 
 export default scrollAnimation;

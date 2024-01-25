@@ -95,8 +95,12 @@ class WebgiViewer extends Component {
   constructor(props) {
     super(props);
     this.canvasRef = createRef();
-    
-    // this.memorizedScrollAnimation = this.memorizedScrollAnimation.bind(this);
+    this.viewer;
+    this.manager;
+    this.camera;
+    this.position;
+    this.target;
+    this.needsUpdate;
   }
 
   componentDidMount() {
@@ -108,16 +112,17 @@ class WebgiViewer extends Component {
       scrollAnimation(position, target, onUpdate);
     }
   }
+
   async setupViewer() {
     if (this.canvasRef.current) {
       this.viewer = new ViewerApp({
         canvas: this.canvasRef.current,
       });
-
       this.manager = this.viewer.addPlugin(AssetManagerPlugin);
       this.camera = this.viewer.scene.activeCamera;
       this.position = this.camera.position;
       this.target = this.camera.target;
+
       await this.viewer.addPlugin(GBufferPlugin);
       await this.viewer.addPlugin(new ProgressivePlugin(32));
       await this.viewer.addPlugin(new TonemapPlugin(true));
@@ -125,33 +130,36 @@ class WebgiViewer extends Component {
       await this.viewer.addPlugin(SSRPlugin);
       await this.viewer.addPlugin(SSAOPlugin);
       await this.viewer.addPlugin(BloomPlugin);
-      await addBasePlugins(this.viewer);
-      await this.viewer.addPlugin(CanvasSnipperPlugin);
+      // await addBasePlugins(this.viewer);
+      // await this.viewer.addPlugin(CanvasSnipperPlugin);
       this.viewer.renderer.refreshPipeline();
-      (await this.manager).addFromPath("scene-black.glb");
+      (await this.manager).addFromPath("scene.glb");
       this.viewer.getPlugin(TonemapPlugin).config.clipBackground = true;
       this.viewer.scene.activeCamera.setCameraOptions({
         controlsEnabled: false,
       });
+
       window.scrollTo(0, 0);
       this.onUpdate = () => {
         this.needsUpdate = true;
         this.viewer.setDirty();
       };
+
       this.viewer.addEventListener("preFrame", () => {
         if (this.needsUpdate) {
           this.camera.positionTargetUpdated(true);
           this.needsUpdate = false;
         }
       });
+
       this.memorizedScrollAnimation(this.position, this.target, this.onUpdate);
     }
   }
 
   render() {
     return (
-      <div className={Styles.webgi_canvas_container}>
-        <canvas className={Styles.webgi_canvas} ref={this.canvasRef}></canvas>
+      <div id="webgi-canvas-container">
+        <canvas id="webgi-canvas" ref={this.canvasRef} />
       </div>
     );
   }
