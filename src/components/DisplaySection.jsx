@@ -4,6 +4,7 @@ class DisplaySection extends Component {
   constructor(props) {
     super(props);
     this.handleScrollToTop = this.handleScrollToTop.bind(this);
+    this.triggerPreview = props.triggerPreview;
   }
   handleScrollToTop() {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
@@ -16,7 +17,9 @@ class DisplaySection extends Component {
         <span className="description">
           A display that&apos;s up to 2x brighter in the sun.
         </span>
-        <div className="button">Try me!</div>
+        <div className="button" onClick={this.triggerPreview}>
+          Try me!
+        </div>
         <button className="back-button" onClick={this.handleScrollToTop}>
           Top
         </button>
